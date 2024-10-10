@@ -1,0 +1,16 @@
+<template>
+    <v-app>
+        <v-app-bar>
+            <v-col cols="12" align="end"> 
+                <v-btn to="/">home</v-btn>
+                <v-btn to="/login">login</v-btn>
+                <v-btn to="register">register</v-btn>
+            </v-col>
+          
+        </v-app-bar>
+        <v-main>
+            <slot />
+        </v-main>
+    </v-app>
+</template>
+
