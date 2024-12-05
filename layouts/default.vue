@@ -5,25 +5,16 @@
                 <v-btn @click="logout">logout</v-btn>
             </v-col>
         </v-app-bar>
-        <v-navigation-drawer>
-            <li><NuxtLink to="/dashboard/admin">Click</NuxtLink></li>
-            <li><NuxtLink to="/dashboard/settings">settings</NuxtLink></li>
-            
-            <!-- <v-btn to="dashboard/admin">admin panel</v-btn>
-            <v-btn to="/settings">settings</v-btn>
-            <v-btn to="/account">account</v-btn> -->
-            <div>
-            <!-- <v-btn
-            v-for="(x, index) in buttons"
-            :key="index"
-            :title="x.title"
-            :to="x.to"
-            :icon="x.icon"
+        <v-navigation-drawer class="mt-5">
+            <v-list-item link 
+                v-for="(i, index) in buttons"
+                :key="index"
+                :title="i.title"
+                :to="i.to"
+                :prepend-icon="i.icon"
             >
-             </v-btn> -->
-            </div>
-
-          
+    
+            </v-list-item>
         </v-navigation-drawer>
         <v-main>
             <!-- <NuxtPage /> -->
@@ -39,9 +30,10 @@ const logout = () => {
 }
 
 const buttons = ref([
-    {title: 'admin panel', icon: 'mdi-lock', to: 'dashboard/admin'},
-    {title: 'settings', icon: 'mdi-cog', to: 'dashboard/settings'},
-    {title: 'directories', icon: 'mdi-folder-multiple', to: 'dashboard/directories'},
+    {title: 'admin panel', icon: 'mdi-account-alert', to: '/dashboard/admin'},
+    {title: 'Database', icon: 'mdi-database', to: '/dashboard/database'},
+    {title: 'settings', icon: 'mdi-cog', to: '/dashboard/settings'},
+    {title: 'logout', icon: 'mdi-logout', to: '/'},
 ])
 
 </script>
